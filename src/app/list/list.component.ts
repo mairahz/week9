@@ -26,4 +26,10 @@ export class ListComponent implements OnInit {
     }
   }
 
+  updateProd(product: Product){
+    localStorage.removeItem('product');
+    localStorage.setItem('product', JSON.stringify(product));
+    this.router.navigate(['edit']);
+  }
+
 }

@@ -3,6 +3,7 @@ module.exports = function(db, app){
     app.get('/api/read', function(req, res){
         const collection = db.collection('product');
         collection.find({}).toArray((err, data) => {
+            console.log(data)
             res.send(data);
         });
     });

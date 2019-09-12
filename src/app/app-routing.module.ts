@@ -9,11 +9,11 @@ import { EditComponent } from './edit/edit.component';
 const routes: Routes = [{path: '', component: HomeComponent},
                         {path: 'add', component: AddComponent},
                         {path: 'list', component: ListComponent},
-                        {path: 'edit/:product', component: EditComponent}
+                        {path: 'edit', component: EditComponent}
                       ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

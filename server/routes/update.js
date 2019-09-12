@@ -5,11 +5,13 @@ module.exports = function(db, app, ObjectID){
         if(!req.body){
             return res.sendStatus(400);
         }
-        var objectid = new ObjectID(product.id);
+        product = req.body;
+        var objectid = new ObjectID(product._id);
+        console.log(objectid)
         const collection = db.collection('product');
-        collection.updateOne({_id:objectid},{$set:{name:product.name, description:product.description, price:product.price, units:product.units}}, ()=>{
-            // Return a response to the client to let them know the delete was successful.
-            res.send({'ok':product.id});
+        collection.updateOne({_id:objectid},{$set: {id:product.id, name:product.name, desc:product.desc, price:product.price, units:product.units}}, ()=>{
+            // Return a response to the client to let them know the update was successful.
+            res.send({'ok':product});
         });
     });
 }
