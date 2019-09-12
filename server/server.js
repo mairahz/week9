@@ -28,10 +28,13 @@ MongoClient.connect(url, {poolSize:10, useNewUrlParser: true, useUnifiedTopology
 
   require('./routes/add.js')(db, app);
   require('./routes/read.js')(db, app);
+  require('./routes/count.js')(db, app);
+  require('./routes/valid.js')(db, app);
   require('./routes/remove.js')(db, app, ObjectID);
   require('./routes/update.js')(db, app, ObjectID);
   const server = require('./listen.js');
   // Start server listening for requests
   server.listen(http, PORT);
+
 
 });

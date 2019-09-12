@@ -7,7 +7,7 @@ module.exports = function(db, app, ObjectID){
         productID = req.body.productid;
         // Create a new mongo Object ID from the passed in _id.
         var objectid = new ObjectID(productID);
-        const collection = db.collection('products');
+        const collection = db.collection('product');
         // Delete a single item based on its unique ID.
         collection.deleteOne({_id:objectid}, (err, docs)=>{
             // get a new listing of all items in the database and return to client.

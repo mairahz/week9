@@ -65,7 +65,7 @@ export class AddComponent implements OnInit {
     if(this.id == null){
       this.iderrorshow = !this.iderrorshow;
     } else {
-      this.newProd = new Product( this.id, this.name, this.desc, this.price, this.units);
+      this.newProd = new Product(this.id, this.name, this.desc, this.price, this.units);
       this.proddata.add(this.newProd).subscribe((data)=>{
         console.log(data);
         this.noticeshow = true;
