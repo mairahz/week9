@@ -30,6 +30,10 @@ export class ProddataService {
     return this.http.post<any>('http://localhost:3000/api/delete', {'productid': productID});
   }
 
+  checkvalidid(productID){
+    return this.http.post<any>('http://localhost:3000/api/valid', {'id':productID});
+  }
+
   getCount(){
     return this.http.get<any>('http://localhost:3000/api/count');
   }
