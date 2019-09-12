@@ -70,7 +70,8 @@ export class AddComponent implements OnInit {
         console.log(data);
         this.noticeshow = true;
         if(data.err == null){
-          this.newProdMsg = data.num + " new product (" + this.name + ") was added";
+          // this.newProdMsg = data.num + " new product (" + this.name + ") was added";
+          alert(data.num + " new product (" + this.name + ") was added")
         } else {
           this.newProdMsg = data.err;
         }
@@ -88,8 +89,9 @@ export class AddComponent implements OnInit {
     this.noticeshow = false;
     this.proddata.checkvalidid(event).subscribe((data)=>{
       if(data.success == 0){
-        this.ideerrormsg2 = " Something above " + data.topnum;
+        // this.ideerrormsg2 = " Something above " + data.topnum;
         this.iderrorshow = !this.iderrorshow;
+        alert(" Something above " + data.topnum)
       } else {
         this.iderrorshow = false;
         this.ideerrormsg2 = null;

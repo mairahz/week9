@@ -16,7 +16,7 @@
             <td>{{product.desc}}</td>
             <td>{{product.price}}</td>
             <td>{{product.units}}</td>
-            <td><span class="btn btn-primary" [routerLink]="['/update', product._id]"> <i class="fa fa-edit"></i>Edit</span>
+            <td><span class="btn btn-primary" [routerLink]="['/edit', product._id]"> <i class="fa fa-edit"></i>Edit</span>
                 &nbsp; <span class="btn btn-danger" (click)="deleteProd(product._id)"><i class="fa fa-trash"></i>Delete</span>
             </td>
           </tr>
