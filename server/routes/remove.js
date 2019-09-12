@@ -4,7 +4,7 @@ module.exports = function(db, app, ObjectID){
         if(!req.body){
             return res.sendStatus(400);
         }
-        console.log(req.body)
+        productID = req.body.productid;
         // Create a new mongo Object ID from the passed in _id.
         var objectid = new ObjectID(productID);
         const collection = db.collection('product');

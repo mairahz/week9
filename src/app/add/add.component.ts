@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProddataService } from '../services/proddata.service';
 import { Product } from '../product';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add',
@@ -47,7 +48,7 @@ export class AddComponent implements OnInit {
   iderrorshow:boolean = false;
   noticeshow:boolean = false;
 
-  constructor(private proddata:ProddataService) { }
+  constructor(private proddata:ProddataService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -80,6 +81,7 @@ export class AddComponent implements OnInit {
         this.desc = "";
         this.price = null;
         this.units = null;
+        this.router.navigate(['list']);
       });
 
     }
